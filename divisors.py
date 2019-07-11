@@ -8,10 +8,17 @@ I have an idea.
 '''
 
 def main(x):
-    for n in range(x+1):
+    divisors = []
+    for n in range(1,x+1):
         #Checks if n is inclusively a divisor of x
         if (x%n == 0):
-            
+            if n in divisors:
+                 continue
+            else:
+                divisors.append(int(n))
+                divisors.append(int(x/n))
+    divisors.sort()
+    return divisors
 
 
 if (len(sys.argv) != 2):
@@ -19,4 +26,4 @@ if (len(sys.argv) != 2):
 number = int(sys.argv[1])
 if (number < 1):
     raise Exception("Argument is less than one.")
-main(number)
+print(main(number))
