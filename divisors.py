@@ -20,10 +20,8 @@ def main(x):
     divisors.sort()
     return divisors
 
-
-if (len(sys.argv) != 2):
-    raise Exception("Program requires 1 arguement.")
-number = int(sys.argv[1])
-if (number < 1):
-    raise Exception("Argument is less than one.")
-print(main(number))
+if (len(sys.argv) == 2):
+    number = int(sys.argv[1])
+    if (number < 1):
+        raise Exception("Argument is less than one.")
+    print(main(number))
